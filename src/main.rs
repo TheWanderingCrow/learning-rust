@@ -1,10 +1,7 @@
 use std::io;
 
 fn main() {
-    elementary1();
-    let _ = elementary2();
-    let _ = elementary3();
-    let _ = elementary4();
+    let _ = elementary6();
 }
 
 fn elementary1() {
@@ -53,13 +50,52 @@ fn elementary4() -> io::Result<()> {
 
     io::stdin().read_line(&mut input)?;
 
-    let _num = input.parse::<u32>();
-    let i: u32 = 0;
+    let x: u32 = input.trim().parse().expect("Input not an Integer");
+    let mut i: u32 = 0;
 
-    while i < _num {
+    while i < x + 1 {
         let s = i.to_string();
+        i += 1;
         print!("{} ", s);
     }
 
     Ok(())
 }
+
+fn elementary5() -> io::Result<()> {
+    println!("Elementary 5:");
+
+    let mut input = String::new();
+
+    println!("Give me a number");
+
+    io::stdin().read_line(&mut input)?;
+
+    let x: u32 = input.trim().parse().expect("Input not an Integer");
+    let mut i: u32 = 0;
+
+    while i < x + 1 {
+        let s = i.to_string();
+        if i % 3 == 0 || i % 5 == 0 {
+            print!("{} ", s);
+        };
+        i += 1;
+    }
+
+    Ok(())
+}
+
+fn elementary6() -> io::Result<()> {
+    println!("Elementary 6:");
+
+    let mut input = String::new();
+
+    println!("Give me a number");
+
+    io::stdin().read_line(&mut input)?;
+    let num: u32 = input.trim().parse().expect("Input not an Integer");
+
+    Ok(())
+}
+
+fn elem6_helper1(num: u32) {}
